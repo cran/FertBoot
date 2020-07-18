@@ -1,0 +1,21 @@
+Package: FertBoot
+Type: Package
+Title: Fertilizer Response Curve Analysis by Bootstrapping Residuals
+Version: 0.4.0
+Authors@R: c(person("Ting Fung (Ralph)", "Ma", email = "tingfung.ma@wisc.edu", role = c("cre", "aut")),
+    person("Hannah", "Francis", email = "hrfrancis@wisc.edu", role = "aut"),
+    person("Matt", "Ruark", role = "ctb"))
+Maintainer: Ting Fung (Ralph) Ma <tingfung.ma@wisc.edu>
+Description: Quantify variability (such as confidence interval) of fertilizer response curves and optimum fertilizer rates using bootstrapping residuals with several popular non-linear and linear models.
+Imports: stats, nls.multstart, simpleboot
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+NeedsCompilation: no
+Packaged: 2020-07-14 17:17:17 UTC; Ralph
+Author: Ting Fung (Ralph) Ma [cre, aut],
+  Hannah Francis [aut],
+  Matt Ruark [ctb]
+Repository: CRAN
+Date/Publication: 2020-07-18 09:32:17 UTC
