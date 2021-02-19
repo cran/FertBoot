@@ -1,13 +1,14 @@
-#' Fitting quadratic plateau model using mutiple initial vaues
+#'
+#' Fitting quadratic plateau model using multiple initial values
 #'
 #' \code{f.quad.plateau} fits quadratic plateau model using multiple initial values. The multiple initial values are randomly sampled in  a "cube" of parameter space. More precisely, quadratic plateau model assumes
-#'     y = (a + b * x + c *x^2) * (x <= -0.5*b/c) + (a + -b^2/(4 * c)) * (x > -0.5 * b/c).
+#'     y ~ (a + b * x + c *x^2) * (x <= -0.5*b/c) + (a + -b^2/(4 * c)) * (x > -0.5 * b/c).
 #'
-#' @param d data drame with two columns (\code{x} and \code{y})
+#' @param d data frame with two columns (\code{x} and \code{y})
 #' @param start initial estimate for non-linear least square (default value: \code{ list(a = 1, b = 1, c = 1)})
 #' @param plus_minus radius of random initial values (default: \code{100})
-#' @param n.start total number of initial points considered (deafult: \code{1000})
-#' @param msg logical flag whehter printing progress
+#' @param n.start total number of initial points considered (default: \code{1000})
+#' @param msg logical flag whether printing progress
 #'
 #' @return \code{f.quad.plateau} returns a list of two components (if converged): \code{nls.summary}: summary of the fitted model; \code{nls.model}: nls object
 #' @import stats nls.multstart simpleboot

@@ -1,13 +1,14 @@
-#' Fitting quadratic model using mutiple initial vaues
+#'
+#' Fitting quadratic model using multiple initial values
 #'
 #' \code{f.quad} fits quadratic model using multiple initial values. The multiple initial values are randomly sampled in  a "cube" of parameter space. More precisely, quadratic model assumes
-#'     y =  a+b*x+c*x^2,
+#'     y ~ a+b*x+c*x^2,
 #'
-#' @param d data drame with two columns (\code{x} and \code{y})
+#' @param d data frame with two columns (\code{x} and \code{y})
 #' @param start initial estimate for non-linear least square (default value: \code{ list(a = 1, b = 1, c = 1)})
 #' @param plus_minus radius of random initial values (default: \code{100})
-#' @param n.start total number of initial points considered (deafult: \code{1000})
-#' @param msg logical flag whehter printing progress
+#' @param n.start total number of initial points considered (default: \code{1000})
+#' @param msg logical flag whether printing progress
 #'
 #' @return \code{f.quad} returns a list of two components (if converged): \code{nls.summary}: summary of the fitted model; \code{nls.model}: nls object
 #' @import stats nls.multstart simpleboot

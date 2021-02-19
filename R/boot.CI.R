@@ -1,9 +1,10 @@
+#'
 #' Bootstrap confidence intervals of mean
 #' @param x a vector of observation
 #' @param alpha significance level (default: 0.05)
 #' @param CI.type type of CI required (default: "all")
 #'
-#' @return \code{boot.CI} return list of confidence intervals of mean (\code{CI.percent}: percentile, \code{CI.BC}:bias-corrected and \code{CI.BCa}: bias-corrected and accelerated)
+#' @return \code{boot.CI} return list of confidence intervals of mean (\code{CI.percent}: percentile, \code{CI.BC}: bias-corrected and \code{CI.BCa}: bias-corrected and accelerated).
 #' @import stats nls.multstart simpleboot
 #' @examples
 #'

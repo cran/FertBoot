@@ -1,16 +1,19 @@
+#'
 #' Quadratic plateau model estimation by bootstrapping residuals
 #'
-#' \code{boot.resid.quad.plateau} is the core function that implement bootstrapping residuals on quadratic plateau model, which assumes
-#'     y = (a + b * x + c *x^2) * (x <= -0.5*b/c) + (a + -b^2/(4 * c)) * (x > -0.5 * b/c). Note that this functions may take minutes up to days. Parallel computing could be considered when necessary. We suggest users start with a smaller \code{B} and moderate \code{n.start} to see if the bootstrap models can convergence.  In general, increasing \code{n.start} and \code{plus_minus} may help convergence. For rigorous statistical inference, \code{B} should be reach order of thousand.
+#' \code{boot.resid.quad.plateau} is the core function to implement bootstrapping residuals on quadratic plateau models, which assumes
+#'     y = (a + b * x + c *x^2) * (x <= -0.5*b/c) + (a + -b^2/(4 * c)) * (x > -0.5 * b/c). Note that this function may take minutes up to days. Parallel computing may be necessary.
+#'     We suggest users start with a smaller \code{B} and moderate n.start to see if the bootstrap models can converge.
+#'     In general, increasing n.start and plus_minus may help with ease of convergence. For rigorous statistical inference, B should be on the order of a thousand.
 #'
 #'
 #' @param mod a full model list, probably from \code{f.quad.plateau()}
-#' @param data data drame with two columns (\code{x} and \code{y})
+#' @param data data frame with two columns (\code{x} and \code{y})
 #' @param x.range vector of data.frame with one column for range of N rate of interested for prediction interval
 #' @param B bootstrap sample size
 #' @param plus_minus radius of random initial values (default: \code{100})
-#' @param n.start total number of initial points considered (deafult: \code{1000})
-#' @param print.progress logical flag whehter printing progress
+#' @param n.start total number of initial points considered (default: \code{1000})
+#' @param print.progress logical flag whether printing progress
 #'
 #' @return \code{boot.resid.quad.plateau} returns a list of two elements:
 #' \code{result}: matrix with B rows and columns containing bootstrap sample for parameter (\code{a,b,c}), optimal N and yield (\code{max_x, max_y}), log-likelihood (\code{logLik}) and N values of interest;
@@ -33,7 +36,7 @@
 #'
 #'
 #' boot.resid.quad.plateau(ans, d, x.range=seq(0,280,by=40),
-#'     B=1e2-1, plus_minus = 1e2, n.start=1000, print.progress=TRUE)
+#'     B=1e1-1, plus_minus = 1e2, n.start=1000, print.progress=TRUE) # use larger B for inference
 #'
 #' }
 #'
@@ -41,7 +44,8 @@
 #'
 #' @export
 #'
-boot.resid.quad.plateau <- function(mod, data, x.range=data.frame(x=seq(0,280,by=40)), B=1e2-1, plus_minus = 1e2, n.start=5000, print.progress=TRUE) {
+boot.resid.quad.plateau <- function(mod, data, x.range=data.frame(x=seq(0,280,by=40)),
+  B=1e2-1, plus_minus = 1e2, n.start=5000, print.progress=TRUE) {
 
   if (class(x.range) == "numeric")  x.range <- data.frame(x=x.range)
 

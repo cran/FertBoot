@@ -17,7 +17,7 @@ boot.resid.quad.plateau(
 \arguments{
 \item{mod}{a full model list, probably from \code{f.quad.plateau()}}
 
-\item{data}{data drame with two columns (\code{x} and \code{y})}
+\item{data}{data frame with two columns (\code{x} and \code{y})}
 
 \item{x.range}{vector of data.frame with one column for range of N rate of interested for prediction interval}
 
@@ -25,9 +25,9 @@ boot.resid.quad.plateau(
 
 \item{plus_minus}{radius of random initial values (default: \code{100})}
 
-\item{n.start}{total number of initial points considered (deafult: \code{1000})}
+\item{n.start}{total number of initial points considered (default: \code{1000})}
 
-\item{print.progress}{logical flag whehter printing progress}
+\item{print.progress}{logical flag whether printing progress}
 }
 \value{
 \code{boot.resid.quad.plateau} returns a list of two elements:
@@ -35,8 +35,10 @@ boot.resid.quad.plateau(
 \code{x.range}: range of x considered for prediction interval (same as \code{x.range} in vector form)
 }
 \description{
-\code{boot.resid.quad.plateau} is the core function that implement bootstrapping residuals on quadratic plateau model, which assumes
-    y = (a + b * x + c *x^2) * (x <= -0.5*b/c) + (a + -b^2/(4 * c)) * (x > -0.5 * b/c). Note that this functions may take minutes up to days. Parallel computing could be considered when necessary. We suggest users start with a smaller \code{B} and moderate \code{n.start} to see if the bootstrap models can convergence.  In general, increasing \code{n.start} and \code{plus_minus} may help convergence. For rigorous statistical inference, \code{B} should be reach order of thousand.
+\code{boot.resid.quad.plateau} is the core function to implement bootstrapping residuals on quadratic plateau models, which assumes
+    y = (a + b * x + c *x^2) * (x <= -0.5*b/c) + (a + -b^2/(4 * c)) * (x > -0.5 * b/c). Note that this function may take minutes up to days. Parallel computing may be necessary.
+    We suggest users start with a smaller \code{B} and moderate n.start to see if the bootstrap models can converge.
+    In general, increasing n.start and plus_minus may help with ease of convergence. For rigorous statistical inference, B should be on the order of a thousand.
 }
 \examples{
 
@@ -53,7 +55,7 @@ ans <- f.quad.plateau(d, start=list(a = 7, b = 0.02, c = 1e-5),
 
 
 boot.resid.quad.plateau(ans, d, x.range=seq(0,280,by=40),
-    B=1e2-1, plus_minus = 1e2, n.start=1000, print.progress=TRUE)
+    B=1e1-1, plus_minus = 1e2, n.start=1000, print.progress=TRUE) # use larger B for inference
 
 }
 

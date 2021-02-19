@@ -13,7 +13,7 @@ compare.two.sample(sample1, sample2, fun = mean, R = 1000)
 
 \item{fun}{statistic (univariate) to be compared (default: \code{mean})}
 
-\item{R}{number of resample (deafult: \code{1000})}
+\item{R}{number of resamples (default: \code{1000})}
 }
 \value{
 \code{compare.two.sample} return a list with two components, namely,

@@ -14,7 +14,7 @@ boot.CI(x, alpha = 0.05, CI.type = "all")
 \item{CI.type}{type of CI required (default: "all")}
 }
 \value{
-\code{boot.CI} return list of confidence intervals of mean (\code{CI.percent}: percentile, \code{CI.BC}:bias-corrected and \code{CI.BCa}: bias-corrected and accelerated)
+\code{boot.CI} return list of confidence intervals of mean (\code{CI.percent}: percentile, \code{CI.BC}: bias-corrected and \code{CI.BCa}: bias-corrected and accelerated).
 }
 \description{
 Bootstrap confidence intervals of mean

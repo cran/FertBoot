@@ -1,8 +1,10 @@
+#'
 #' Two sample bootstrap test for comparing different in \code{sample1} and \code{sample2}, not necessary with same sample size
+#'
 #' @param sample1 first sample
 #' @param sample2 second sample
 #' @param fun statistic (univariate) to be compared (default: \code{mean})
-#' @param R number of resample (deafult: \code{1000})
+#' @param R number of resamples (default: \code{1000})
 #' @return \code{compare.two.sample} return a list with two components, namely,
 #' \code{p.value}: two tailed p-value for the bootstrap test
 #' \code{object}: a "\code{simpleboot}" object allowing further analysis using other R packages, such as \code{boot})

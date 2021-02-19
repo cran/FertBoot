@@ -2,7 +2,7 @@
 % Please edit documentation in R/f.quad.R
 \name{f.quad}
 \alias{f.quad}
-\title{Fitting quadratic model using mutiple initial vaues}
+\title{Fitting quadratic model using multiple initial values}
 \usage{
 f.quad(
   d,
@@ -13,22 +13,22 @@ f.quad(
 )
 }
 \arguments{
-\item{d}{data drame with two columns (\code{x} and \code{y})}
+\item{d}{data frame with two columns (\code{x} and \code{y})}
 
 \item{start}{initial estimate for non-linear least square (default value: \code{ list(a = 1, b = 1, c = 1)})}
 
 \item{plus_minus}{radius of random initial values (default: \code{100})}
 
-\item{n.start}{total number of initial points considered (deafult: \code{1000})}
+\item{n.start}{total number of initial points considered (default: \code{1000})}
 
-\item{msg}{logical flag whehter printing progress}
+\item{msg}{logical flag whether printing progress}
 }
 \value{
 \code{f.quad} returns a list of two components (if converged): \code{nls.summary}: summary of the fitted model; \code{nls.model}: nls object
 }
 \description{
 \code{f.quad} fits quadratic model using multiple initial values. The multiple initial values are randomly sampled in  a "cube" of parameter space. More precisely, quadratic model assumes
-    y =  a+b*x+c*x^2,
+    y ~ a+b*x+c*x^2,
 }
 \examples{
 
